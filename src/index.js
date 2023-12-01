@@ -236,19 +236,16 @@ app.post("/alumno", async (req, res) => {
  * @swagger
  * /alumno/{id}:
  *   put:
- *     tags:
- *       - alumnos
- *     summary: Actualizar información de un alumno por ID
- *     description: Actualiza la información de un alumno en la Base de Datos según su ID.
+ *     summary: Actualizar información de un alumno
+ *     description: Actualiza la información de un alumno en la base de datos.
  *     parameters:
- *       - name: id
- *         in: path
- *         description: ID del alumno a actualizar
+ *       - in: path
+ *         name: id
  *         required: true
+ *         description: ID del alumno a actualizar.
  *         schema:
  *           type: integer
  *     requestBody:
- *       description: Campos a actualizar en el alumno
  *       required: true
  *       content:
  *         application/json:
@@ -257,11 +254,14 @@ app.post("/alumno", async (req, res) => {
  *             properties:
  *               nombre:
  *                 type: string
- *               apellido:
- *                 type: string
+ *               edad:
+ *                 type: integer
+ *             example:
+ *               nombre: Juan Perez
+ *               edad: 25
  *     responses:
  *       200:
- *         description: La información del alumno ha sido actualizada correctamente.
+ *         description: Éxito. La información del alumno ha sido actualizada correctamente.
  *         content:
  *           application/json:
  *             example:
@@ -273,12 +273,13 @@ app.post("/alumno", async (req, res) => {
  *             example:
  *               mensaje: El alumno no existe.
  *       500:
- *         description: Error interno del servidor al intentar actualizar la información del alumno.
+ *         description: Error interno del servidor.
  *         content:
  *           application/json:
  *             example:
- *               mensaje: Mensaje de error específico generado por la base de datos.
+ *               mensaje: Mensaje de error específico.
  */
+
 
 
 
@@ -290,6 +291,7 @@ app.put("/alumno/:id", async (req, res) => {
   let camposModificar = "";
   let campos = Object.keys(req.body);
   var segundo = false;
+  console.log(req.body)
   campos.forEach(campo => {
     if (segundo == false) {
       camposModificar = camposModificar + ("`" + campo + "` = '" + req.body[campo] + "' ");
