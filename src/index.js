@@ -57,8 +57,8 @@ app.use(express.json())
  *               [
  *                 {
  *                   "id": 1,
- *                   "nombre": "Ejemplo",
- *                   "apellido": "Apellido"
+ *                   "nombre": "Dan",
+ *                   "apellido": "Esq"
  *                 },
  *               ]
  *       500:
@@ -116,8 +116,8 @@ app.get("/alumnos", async (req, res) => {
  *               [
  *                 {
  *                   "id": 1,
- *                   "nombre": "Ejemplo",
- *                   "apellido": "Apellido"
+ *                   "nombre": "Dan",
+ *                   "apellido": "Esq"
  *                 }
  *               ]
  *       404:
