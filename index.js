@@ -8,7 +8,7 @@ const { SwaggerTheme } = require('swagger-themes');//
 const swaggerJsDoc=require('swagger-jsdoc')
 const redoc = require('redoc-express');
 
-const port = process.env.PORT || 8082
+const PORT = process.env.PORT || 8082
 const host = process.env.host || 'localhost'
 const user = process.env.user || 'test'
 const password = process.env.password || 'test'
@@ -427,6 +427,6 @@ app.get(
 );
 
 
-app.listen(8082,(req,res)=>{
+app.listen(PORT,(req,res)=>{
     console.log("servidor express  escuchando")
 })
