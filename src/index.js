@@ -25,9 +25,9 @@ const options = {
 };
 
 
-const def= fs.readFileSync(path.join(__dirname,'./swagger.json'),
+const def= fs.readFileSync(path.join(__dirname,'../swagger/swagger.json'),
 {encoding: 'utf8',flag:'r'})
-const read =fs.readFileSync(path.join(__dirname,'./README.MD'),
+const read =fs.readFileSync(path.join(__dirname,'../README/README.MD'),
 {encoding: 'utf8',flag:'r'})
 const defObj=JSON.parse(def)
 defObj.info.description=read
