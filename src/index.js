@@ -221,7 +221,7 @@ app.post("/alumno", async (req, res) => {
     });
 
     // Inserción del nuevo alumno en la base de datos con la información proporcionada.
-    const [rows, fields] = await conn.promise().query("INSERT INTO `sistemas`.`alumnos` VALUES ('" + req.query.id + "', '" + req.query.nombre + "', '" + req.query.apellido + "');");
+    const [rows, fields] = await conn.promise().query("INSERT INTO `alumnos` VALUES ('" + req.query.id + "', '" + req.query.nombre + "', '" + req.query.apellido + "');");
 
     // Respondemos con un JSON que contiene información sobre la inserción exitosa del nuevo alumno.
     res.status(200).json({ mensaje: "El nuevo alumno ha sido agregado correctamente." });
