@@ -247,17 +247,18 @@ app.post("/alumno", async (req, res) => {
  *         required: true
  *         schema:
  *           type: integer
- *       - name: body
- *         in: body
- *         description: Campos a actualizar en el alumno
- *         required: true
- *         schema:
- *           type: object
- *           properties:
- *             nombre:
- *               type: string
- *             apellido:
- *               type: string
+ *     requestBody:
+ *       description: Campos a actualizar en el alumno
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nombre:
+ *                 type: string
+ *               apellido:
+ *                 type: string
  *     responses:
  *       200:
  *         description: La información del alumno ha sido actualizada correctamente.
@@ -278,6 +279,7 @@ app.post("/alumno", async (req, res) => {
  *             example:
  *               mensaje: Mensaje de error específico generado por la base de datos.
  */
+
 
 
 app.put("/alumno/:id", async (req, res) => {
